@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  deployment:
 
     runs-on: ubuntu-latest
 
@@ -15,4 +15,3 @@ jobs:
     - run: docker build . -t chiranjeeviprac/next-js-app
     - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin 
     - run: docker push chiranjeeviprac/next-js-app:latest
-    
